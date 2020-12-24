@@ -11,14 +11,14 @@ function shellSort(arr){
         h=h*2+1
     }
     while (h >= 1) {
-        h = h / 2;
         for (var i = h; i < len; i++){
-            for (var j = i; i >= h; i -= h){
+            for (var j = i; j >=0; j -= h){
                 if (arr[j - h] > arr[j]) {
                     [arr[j - h], arr[j]] = [arr[j], arr[j - h]];
                 }
             }
         }
+        h = Math.floor(h / 2);
     }
     return arr;
 }
